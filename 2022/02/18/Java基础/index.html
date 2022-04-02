@@ -1,0 +1,1471 @@
+<!DOCTYPE html>
+
+
+
+
+<html class="theme-next gemini" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="Java基础复习笔记">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java基础">
+<meta property="og:url" content="http://example.com/2022/02/18/Java%E5%9F%BA%E7%A1%80/index.html">
+<meta property="og:site_name">
+<meta property="og:description" content="Java基础复习笔记">
+<meta property="og:locale">
+<meta property="article:published_time" content="2022-02-18T05:14:21.000Z">
+<meta property="article:modified_time" content="2022-02-18T05:20:44.062Z">
+<meta property="article:author" content="菜菜小狗">
+<meta name="twitter:card" content="summary">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":true,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://example.com/2022/02/18/Java基础/"/>
+
+
+
+
+
+  <title>Java基础 | </title>
+  
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hexo 6.0.0"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title"></span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">取次花丛懒回顾</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/index.html" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/index.html" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-schedule">
+          <a href="/schedule/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-calendar"></i> <br />
+            
+            日程表
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-inform">
+          <a href="/inform/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-comment-o"></i> <br />
+            
+            公告
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/02/18/Java%E5%9F%BA%E7%A1%80/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/3.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Java基础</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2022-02-18T13:14:21+08:00">
+                2022-02-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  4.7k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  17
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="Java基础复习笔记"><a href="#Java基础复习笔记" class="headerlink" title="Java基础复习笔记"></a>Java基础复习笔记</h1><span id="more"></span>
+
+<h2 id="一-基础概念"><a href="#一-基础概念" class="headerlink" title="一.基础概念"></a>一.基础概念</h2><h3 id="1-Java面向对象的特点"><a href="#1-Java面向对象的特点" class="headerlink" title="1.Java面向对象的特点"></a>1.Java面向对象的特点</h3><p>面向对象（Object Oriented）是一种软件开发思想。是对现实世界的一种抽象，把相关的数据和方法组织为一个整体来看待。</p>
+<h3 id="2-Java语言跨平台原理"><a href="#2-Java语言跨平台原理" class="headerlink" title="2.Java语言跨平台原理"></a>2.Java语言跨平台原理</h3><p>Java编译器将<strong>Java源程序</strong>编译成与平台无关的字节码文件（<font color="blue">class文件</font>），然后由Java虚拟机（==JVM==）对字节码文件解释执行。故在不同的操作系统下只需要安装不同的Java虚拟机即可实现Java程序的跨平台。</p>
+<p><em>划重点：</em>不同的操作系统用不同的Java虚拟机来对Java源程序进行解释执行</p>
+<h3 id="3-JRE和JDK"><a href="#3-JRE和JDK" class="headerlink" title="3.JRE和JDK"></a>3.JRE和JDK</h3><p>JVM（Java Virtual Machine），Java虚拟机</p>
+<p>JRE（Java Runtime Environment），==Java运行环境==，包含了JVM和Java的核心类库（Java API）</p>
+<p>JDK（Java Development Kit）称为==Java开发工具==，包含了JRE和开发工具</p>
+<h3 id="4-常用DOS命令"><a href="#4-常用DOS命令" class="headerlink" title="4.常用DOS命令"></a>4.常用DOS命令</h3><table>
+<thead>
+<tr>
+<th>操作</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>盘符名称:</td>
+<td>盘符切换。E:回车，表示切换到E盘。</td>
+</tr>
+<tr>
+<td>dir</td>
+<td>查看当前路径下的内容。</td>
+</tr>
+<tr>
+<td>cd 目录</td>
+<td>进入单级目录。cd itheima</td>
+</tr>
+<tr>
+<td>cd ..</td>
+<td>回退到上一级目录。</td>
+</tr>
+<tr>
+<td>cd 目录1\目录2...</td>
+<td>进入多级目录。cd itheima\JavaSE</td>
+</tr>
+<tr>
+<td>cd \</td>
+<td>回退到盘符目录。</td>
+</tr>
+<tr>
+<td>cls</td>
+<td>清屏。</td>
+</tr>
+<tr>
+<td>exit</td>
+<td>退出命令提示符窗口。</td>
+</tr>
+</tbody></table>
+<h2 id="二、Java基础语法"><a href="#二、Java基础语法" class="headerlink" title="二、Java基础语法"></a>二、Java基础语法</h2><h3 id="1-数据类型"><a href="#1-数据类型" class="headerlink" title="1.数据类型"></a>1.数据类型</h3><p>Java中，数据类型只有“==四类八种==”</p>
+<ul>
+<li><p>整数型：byte、short、int、long<br>byte：1个字节，8 位<br>short：2个字节<br>int：4个字节<br>long：8个字节<br>默认值都为0</p>
+</li>
+<li><p>浮点型：float、double<br>float：单精度浮点型，占4个字节，默认值是0.0f<br>double：双精度浮点型，占8个字节，默认值是0.0d</p>
+</li>
+<li><p>字符型：char<br>占2个字节，16位</p>
+</li>
+<li><p>布尔型：boolean<br>占1个字节，默认值是false</p>
+</li>
+</ul>
+<h3 id="命名"><a href="#命名" class="headerlink" title="命名"></a>命名</h3><p>类名：首字母大写<br>包名：尽量保证小写<br>方法名：首字母小写，后面每个单词首字母大写</p>
+<h3 id="2-面向对象"><a href="#2-面向对象" class="headerlink" title="2.面向对象"></a>2.面向对象</h3><h4 id="类也是一种对象"><a href="#类也是一种对象" class="headerlink" title="类也是一种对象"></a>类也是一种对象</h4><p>类相当于是一系列对象的抽象（反过来看，类可以使用new来创建多个对象）</p>
+<h4 id="对象的创建"><a href="#对象的创建" class="headerlink" title="对象的创建"></a>对象的创建</h4><p>在Java中，将万物都可以看做是对象，但我们要操作的是一个对象的==引用==（reference）。有一个形象的比喻：将车钥匙和车看作是一组对象的引用和对象的组合。当你想要开车时，你需要拿车钥匙启动车，停车时，你需要拿车钥匙来熄火。车钥匙就相当于引用，车就是对象，由车钥匙来驱动车的使用。而且，就算没有车的存在，车钥匙也是一个独立存在的实体。也就是说，有一个对象引用，但不一定需要一个对象与之关联。即：<br><code>Car carkey;</code><br>这里的创建对象只是==引用==，并非对象，如果要使用这个引用，就需要一个对象来和这个引用相关联，即：<br><code>carkey=new Car();</code><br>通常将创建引用和关联对象同时进行，即：<br><code>Car carkey = new Car();</code><br><strong>理解：</strong> 等号左边为创建一个对象的引用，右边是给出一个新对象，等号将二者进行关联，关联之后就可以使用这个引用。</p>
+<h4 id="属性和方法"><a href="#属性和方法" class="headerlink" title="属性和方法"></a>属性和方法</h4><p>类的一个最基本的要素就是具有属性和方法</p>
+<ul>
+<li>属性可以是任意类型的对象或基本数据类型<br>例如：<figure class="highlight angelscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="symbol">A</span>()&#123;</span><br><span class="line">    <span class="built_in">int</span> a;</span><br><span class="line">    Apple apple;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li>方法表示做某些事情的方式，其实就是函数。<br>方法的组成包括方法名称、参数、返回值和方法体<h4 id="构造方法"><a href="#构造方法" class="headerlink" title="构造方法"></a>构造方法</h4>Java中有一种特殊的方法叫做构造方法（构造函数、构造器）。通过提供构造器来确保每个对象都被初始化，也就是说，构造方法专门用于在创建对象时完成类的==初始化==工作。构造方法只能在对象被创建时调用一次，保证对象初始化的进行。注意：构造方法==没有参数类型和返回值==，它的==名称和类名相同==，同一个类中可以有==多个不同的构造方法（参数列表不同）==，没有参数的构造方法被称为默认的构造方法，即：<code>Apple apple = new Apple();</code>。</li>
+</ul>
+<p>如果类中没有手动定义构造方法，JVM会自动生成默认的构造方法。但只要你手动定义了构造方法，JVM就不会生成默认的构造方法，也就是说，此时你想要使用无参构造方法就必须自己手动定义。</p>
+<h4 id="方法重载"><a href="#方法重载" class="headerlink" title="方法重载"></a>方法重载</h4><p>方法重载是不类名的不同表现形式。（构造方法也是重载的一种）<br>有两种重载的方式：一种是构造方法的重载，另一种是普通方法的重载。<br><strong>重载的条件</strong>：</p>
+<ul>
+<li>方法名称必须相同</li>
+<li>方法必须不同，即：方法的==参数列表必须不同==（个数不同、类型不同、排列顺序不同等），方法的返回值类型可以相同也可以不同</li>
+<li>重载发生在编译时，编译器根据参数的类型来选择使用哪个方法（所以重载的方法的参数列表必须不同）</li>
+</ul>
+<h4 id="方法的重写"><a href="#方法的重写" class="headerlink" title="方法的重写"></a>方法的重写</h4><p>方法重写发生在子类和父类之间，指的是子类重写父类的方法，而重载指的是同一类中的相同名称的方法。<br><strong>重写的原则</strong>：</p>
+<ul>
+<li>重写的方法必须和父类的方法的返回值类型、方法名、参数列表全部相同。</li>
+<li>重写的方法可以使用@Override注解来标识。</li>
+<li>子类中重写方法的访问权限不能低于父类方法的访问权限。<h4 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h4></li>
+</ul>
+<p><strong>类的初始化</strong><br>在使用new来创建一个对象的时候，其实是调用了这个对象的构造方法来进行类的初始化。也就是说，通过构造方法来保证类的初始化。<br><strong>成员初始化</strong><br>Java会保证每个变量在使用前都会获得初始化。成员初始化包括两种：一种是指定值的初始化，另一种是不指定值的初始化，即使用默认值。<br><strong>构造器初始化</strong><br>可以利用构造器来对某些方法或变量进行初始化，确定初始值，例如：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Couter</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> i;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Couter</span><span class="params">()</span></span>&#123;</span><br><span class="line">        i=<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>通过构造器把i的值初始化为1。</p>
+<h4 id="初始化顺序"><a href="#初始化顺序" class="headerlink" title="初始化顺序"></a>初始化顺序</h4><p>探讨以下内容的初始化顺序</p>
+<ul>
+<li>静态属性：使用static定义的属性</li>
+<li>静态代码块：使用static{}包起来的代码块</li>
+<li>普通属性：非static定义的属性</li>
+<li>普通代码块：{}</li>
+<li>构造方法</li>
+<li>普通方法</li>
+</ul>
+<p><strong>静态属性&gt;静态代码块&gt;普通属性&gt;普通代码块&gt;构造方法</strong></p>
+<h4 id="数组初始化"><a href="#数组初始化" class="headerlink" title="数组初始化"></a>数组初始化</h4><p>数组是相同类型的、用一个标识符名称封装到一起的一个对象序列或基本数据类型的数据的序列，数组通过方括号[]来定义使用：<code>int [] a1;</code>或<code>int a1 [];</code><br><strong>数组赋值：</strong></p>
+<ul>
+<li>直接给每个元素赋值：<code>int array[4] = &#123;1,2,3,4&#125;;</code></li>
+<li>给前面一部分元素赋值，后面元素默认值为0：<code>int array[4] = &#123;2,1&#125;;</code></li>
+<li>初始化时不指定数组长度，由赋值参数的个数来决定数组长度：<code>int array[]=&#123;1,5,2&#125;;</code><br><strong>可变参数列表</strong><br>例：<figure class="highlight axapta"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="built_in">int</span> add(<span class="built_in">int</span> ... numbers)&#123;</span><br><span class="line">    <span class="built_in">int</span> <span class="keyword">sum</span> = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="built_in">int</span> num : numbers)&#123;</span><br><span class="line">        <span class="keyword">sum</span>+=num;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">sum</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+之后就可以使用下面几种方式调用方法：</li>
+</ul>
+<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">add</span>(<span class="number">1</span>);</span><br><span class="line"><span class="attribute">add</span>(<span class="number">2</span>,<span class="number">4</span>);</span><br><span class="line"><span class="attribute">add</span>(new Interger[]&#123;<span class="number">3</span>,<span class="number">2</span>,<span class="number">4</span>&#125;);</span><br></pre></td></tr></table></figure>
+<h4 id="对象的销毁"><a href="#对象的销毁" class="headerlink" title="对象的销毁"></a>对象的销毁</h4><p>虽然Java语言是基于C+ +的，但是它和C/C+ +一个重要的特征就是不需要手动管理对象的销毁工作。Java中由Java虚拟机进行对象的管理和销毁，虽然我们不需要手动管理对象，但是需要知道==对作用域==的概念。<br><strong>对象作用域：</strong><br>对象作用域决定了对象内部定义的变量名的可见性和生命周期。作用域通常由{}的位置来决定。</p>
+<h4 id="this和super"><a href="#this和super" class="headerlink" title="this和super"></a>this和super</h4><p>this表示当前对象，this可以调用方法、属性和指示对象本身。<br>this用法通常有3种</p>
+<ul>
+<li>this指向当前对象</li>
+</ul>
+<figure class="highlight angelscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="symbol">Apple</span>&#123;</span><br><span class="line">    <span class="built_in">int</span> i = <span class="number">0</span>;</span><br><span class="line">    Apple eatApple()&#123;</span><br><span class="line">        i++;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">class</span> <span class="symbol">void</span> <span class="symbol">main</span>(<span class="symbol">String</span> [] <span class="symbol">args</span>)&#123;</span><br><span class="line">        Apple apple = new Apple();</span><br><span class="line">        apple.eatApple().eatApple();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>this修饰属性，最常见的就是在构造方法中使用this调用本类中的属性</li>
+</ul>
+<figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Apple</span>&#123;</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> num;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Apple</span><span class="params">(<span class="keyword">int</span> num)</span></span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.num=num;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(<span class="keyword">String</span>[] args)</span></span>&#123;</span><br><span class="line">        Apple apple = <span class="keyword">new</span> <span class="built_in">Apple</span>(<span class="number">10</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>通过this传递了一个值为10的int类型参数，并把这个值赋给了全局变量num，所以现在num的值就是10。</p>
+<ul>
+<li>this和构造函数一起使用，充当全局关键字</li>
+</ul>
+<figure class="highlight processing"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> class Apple&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="built_in">int</span> num;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">String</span> <span class="built_in">color</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">public</span> Apple(<span class="built_in">int</span> num)&#123;</span><br><span class="line">        <span class="keyword">this</span>(num,<span class="string">&quot;红色&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">public</span> Apple(<span class="keyword">String</span> <span class="built_in">color</span>)&#123;</span><br><span class="line">        <span class="keyword">this</span>(<span class="number">1</span>,<span class="built_in">color</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    pblic Apple(<span class="built_in">int</span> num,<span class="keyword">String</span> <span class="built_in">color</span>)&#123;</span><br><span class="line">        <span class="keyword">this</span>.num=num;</span><br><span class="line">        <span class="keyword">this</span>.<span class="built_in">color</span>=<span class="built_in">color</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>上诉代码中使用<code>this(参数)</code>。相当于调用了其他构造方法，但注意this(参数)必须放在构造方法中的第一行，否则编译不通过。</p>
+<p>如果我们把this理解为指向自身的一个引用，那么super就是指向父类的一个引用。可以使用super.属性(或方法)和super(参数)来调用父类的构造函数。</p>
+<p><strong>注意：</strong></p>
+<table>
+<thead>
+<tr>
+<th>关键字</th>
+<th>this</th>
+<th>super</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>调用方式</td>
+<td>调用本类中的属性、构造函数、方法</td>
+<td>调用父类中的属性、构造函数、方法</td>
+</tr>
+<tr>
+<td>调用位置</td>
+<td>在一个构造函数中调用另一个构造方法时，放在构造函数中第一行</td>
+<td>在一个构造函数中调用另一个构造方法时，放在构造函数中第一行</td>
+</tr>
+<tr>
+<td>调用次数</td>
+<td>一个构造函数只能调用一次</td>
+<td>一个构造函数只能调用一次</td>
+</tr>
+</tbody></table>
+<h3 id="访问控制权限"><a href="#访问控制权限" class="headerlink" title="访问控制权限"></a>访问控制权限</h3><p>访问控制权限又称为封装，是面向对象三大特性的一种。<br>其最核心的一点是：<strong>只对需要的类可见。</strong><br> Java中成员的访问权限有四种：public、protected、default、private</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>private</th>
+<th>default</th>
+<th>protected</th>
+<th>public</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>同一类</td>
+<td>Y</td>
+<td>Y</td>
+<td>Y</td>
+<td>Y</td>
+</tr>
+<tr>
+<td>同一包中的类</td>
+<td></td>
+<td>Y</td>
+<td>Y</td>
+<td>Y</td>
+</tr>
+<tr>
+<td>子类</td>
+<td></td>
+<td></td>
+<td>Y</td>
+<td>Y</td>
+</tr>
+<tr>
+<td>其他包中的类</td>
+<td></td>
+<td></td>
+<td></td>
+<td>Y</td>
+</tr>
+</tbody></table>
+<h4 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h4><p>当我们创建一个类时，就默认其继承Object父类，如果你使用extends指定一个类继承了一个父类，那么这个类就是该父类的子类。</p>
+<h4 id="多态"><a href="#多态" class="headerlink" title="多态"></a>多态</h4><p>多态是指同一个行为具有多个不同的表现形式。是指一个类的实例的相同方法在不同情形下具有不同的表现形式。封装和继承是多态的基础。<br><strong>多态的实现需要三种充要条件：</strong></p>
+<ul>
+<li>继承</li>
+<li>重写父类方法</li>
+<li>父类引用指向子类<br>例如：</li>
+</ul>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Fruit</span></span>&#123;</span><br><span class="line">    int num;</span><br><span class="line">    <span class="keyword">public</span> <span class="built_in">void</span> <span class="function"><span class="title">eat</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;eat Fruit&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Apple</span> <span class="keyword">extends</span> <span class="title">Fruit</span></span>&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="built_in">void</span> <span class="function"><span class="title">eat</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="built_in">super</span>.num=<span class="number">10</span>;</span><br><span class="line">        System.out.println(<span class="string">&quot;eat&quot;</span>+num+<span class="string">&quot;Apple&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="built_in">void</span> <span class="function"><span class="title">main</span>(<span class="params"><span class="built_in">String</span>[] args</span>)</span>&#123;</span><br><span class="line">        Fruit fruit = <span class="keyword">new</span> Apple();   <span class="comment">//父类引用指向子类的对象</span></span><br><span class="line">        fruit.eat();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="组合"><a href="#组合" class="headerlink" title="组合"></a>组合</h4><p>组合即在一个类中创建其它类的对象引用，从而调用其它类的属性和方法。如果想让类具有更多的扩展功能，需要记住：==多组合，少继承==。</p>
+<h4 id="static"><a href="#static" class="headerlink" title="static"></a>static</h4><p>static用来修饰成员变量和方法，被static修饰的变量和方法可以在没有创建对象的情况下通过<code>类名.变量/方法</code>被调用,在静态方法中不能调用非静态的变量和方法。<br><strong>静态代码块</strong>可用于类的初始化操作。静态代码块随着类的加载而执行，因此，通常将只需要进行一次的初始化操作放在静态代码块中。</p>
+<h4 id="final"><a href="#final" class="headerlink" title="final"></a>final</h4><p>final可以修饰类、属性和方法。</p>
+<ul>
+<li>final修饰类时，表示这个类不能被继承。final类中的成员方法会默认指定为final方法。</li>
+<li>final修饰方法时，表示这个方法不能被任何子类重写。</li>
+<li>final修饰变量时分为两种情况，一种是修饰基本数据类型，表示变量值不能被修改；另一种是修饰引用类型的变量，表示对其初始化之后就不能再让其指向另一个对象。</li>
+</ul>
+<h3 id="接口和抽象类"><a href="#接口和抽象类" class="headerlink" title="接口和抽象类"></a>接口和抽象类</h3><h4 id="接口"><a href="#接口" class="headerlink" title="接口"></a>接口</h4><ul>
+<li>接口是一个完全抽象的类，只提供方法的定义，不会提供任何方法的实现。</li>
+<li>接口中只能使用两种访问修饰符：public、default。</li>
+<li>接口可以被其它类使用implements关键字实现，实现接口的类需要提供方法的实现，一个接口可以被多个类实现。</li>
+<li>接口不能被实例化，所以接口中不能有构造方法。</li>
+<li>实现接口的类必须实现接口中所有的方法，否则必须定义为抽象类。</li>
+</ul>
+<h4 id="抽象类"><a href="#抽象类" class="headerlink" title="抽象类"></a>抽象类</h4><p>抽象类是一种抽象能力弱于接口的类，使用abstract关键字来表示。<br>在面向对象的概念中，所有的对象都是通过类来描绘的。但是反过来，并不是所有的类都是用来描绘对象的，如果一个类没有包含足够的信息来描绘一个具体的对象，这样的类就是抽象类。<br>抽象类除了<strong>不能实例化对象</strong>外，类的其他功能依然存在。成员变量，成员方法和构造方法的访问方式和普通类一样。由于抽象类不能实例化对象，所以抽象类必须被继承才能被使用，也是因为这个原因。通常在设计阶段决定要不要设计抽象类。<br>抽象类的特征：</p>
+<ul>
+<li>如果一个类中有抽象方法，那么这个类一定是抽象类。</li>
+<li>抽象类中不一定只有抽象方法，可以在抽象类中定义：构造方法、抽象方法、普通方法、静态方法、普通属性、静态属性</li>
+<li>抽象类和接口一样不能被实例化，只有具体类可以被实例化</li>
+</ul>
+<h3 id="异常"><a href="#异常" class="headerlink" title="异常"></a>异常</h3><p>异常是程序中出现的一些错误，但并不是所有错误都是异常。</p>
+<p>Exception位于java.lang包下，它是一种顶级接口，继承于Throwable类，是程序出现的合理情况。</p>
+<p>Throwable类是Java中所有错误（error）和异常（exceptions）的父类。只有继承了Throwable类或者其子类（或者带有@Throw注解的类）才能被抛出。</p>
+<p>Error是程序无法处理的错误，表示运行应用程序中较严重问题，程序一般不会从错误中恢复。大多数错误与代码编写者执行的操作无关，而表示代码运行时JVM出现的问题。例如，JVM内存溢出。Java程序通常不捕获错误，这些错误都是不可检查的，因为它们在应用程序的控制和处理能力之外。</p>
+<figure class="highlight xl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">stateDiagram-v2</span><br><span class="line">    T<span class="function"><span class="title">hrowable</span> --&gt;</span> Exception</span><br><span class="line">    T<span class="function"><span class="title">hrowable</span> --&gt;</span> Error</span><br><span class="line">    E<span class="function"><span class="title">xception</span> --&gt;</span> IOException</span><br><span class="line">    E<span class="function"><span class="title">xception</span> --&gt;</span> RuntimeException</span><br><span class="line">    IOE<span class="function"><span class="title">xception</span> --&gt;</span> FileNotFoundException</span><br><span class="line">    R<span class="function"><span class="title">untimeException</span> --&gt;</span> NullPointException</span><br><span class="line">    E<span class="function"><span class="title">rror</span> --&gt;</span> OutOfMemoryError</span><br><span class="line">    E<span class="function"><span class="title">rror</span> --&gt;</span> IOError</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h4 id="常见的Exception"><a href="#常见的Exception" class="headerlink" title="常见的Exception"></a>常见的Exception</h4><p>Exception有两种异常，RuntimeException和CheckedException(检查性异常)，这两种异常都应该去捕获。</p>
+<p><strong>常见异常及分类：</strong></p>
+<ul>
+<li>==RuntimeException==：</li>
+</ul>
+<ol>
+<li>ArrayIndexOutOfBoundsException数组越界异常</li>
+<li>NullPointerException空指针异常</li>
+<li>IllegalArgumentException非法参数异常</li>
+<li>ClassCastException类型转换异常</li>
+<li>IllegalStateException非法状态异常</li>
+</ol>
+<ul>
+<li>==CheckedException==：</li>
+</ul>
+<ol>
+<li>NoSuchFieldException</li>
+<li>NoSuchMethodException</li>
+<li>ClassNotFoundException</li>
+<li>IllegalAccessException</li>
+</ol>
+<p><strong>Throwable类的方法</strong></p>
+<ol>
+<li><p>public String getMessage()<br>返回关于发生的异常的详细信息。这个消息在Throwable 类的构造函数中初始化了。</p>
+</li>
+<li><p>public Throwable getCause()<br>返回一个 Throwable 对象代表异常原因。</p>
+</li>
+<li><p>public String toString()<br>返回此 Throwable 的简短描述。</p>
+</li>
+<li><p>public void printStackTrace()<br>将此 Throwable 及其回溯打印到标准错误流。。</p>
+</li>
+<li><p>public StackTraceElement [] getStackTrace()<br>返回一个包含堆栈层次的数组。下标为0的元素代表栈顶，最后一个元素代表方法调用堆栈的栈底。</p>
+</li>
+<li><p>public Throwable fillInStackTrace()<br>用当前的调用栈层次填充Throwable 对象栈层次，添加到栈层次任何先前信息中。</p>
+</li>
+</ol>
+<h4 id="与异常有关的关键字"><a href="#与异常有关的关键字" class="headerlink" title="与异常有关的关键字"></a>与异常有关的关键字</h4><h5 id="throws和throw"><a href="#throws和throw" class="headerlink" title="throws和throw"></a>throws和throw</h5><p>异常也是一个对象，能够被程序员自定义抛出或者应用程序抛出，必须借助throws和throw关键字来定义抛出异常。<br>throws和throw通常成对出现。<br>throw用在方法体内，表示抛出异常实例，由方法体内的语句处理。<br>throws用在方法声明后面，由该方法的调用者来处理。throws主要是声明这个方法会抛出这种类型的异常，使它的调用者知道要捕获这种异常。</p>
+<h4 id="try、finally、catch"><a href="#try、finally、catch" class="headerlink" title="try、finally、catch"></a>try、finally、catch</h4><p>try…catch表示对某一段代码可能抛出的异常进行的捕获。<br>例如：</p>
+<figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">cacheException</span><span class="params">()</span> throws Exception</span>&#123;</span><br><span class="line">    <span class="keyword">try</span>&#123;</span><br><span class="line">        System.out.<span class="built_in">println</span>(<span class="string">&quot;1&quot;</span>);</span><br><span class="line">    &#125;<span class="built_in"><span class="keyword">catch</span></span>(Exception e)&#123;</span><br><span class="line">        e.<span class="built_in">printStackTrace</span>();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>try…finally表示对一段代码不管执行情况如何，都会执行finally中的代码。<br>try…catch…finally表示对异常捕获后，再执行finally中的代码。</p>
+<h3 id="Java内存模型"><a href="#Java内存模型" class="headerlink" title="Java内存模型"></a>Java内存模型</h3><h3 id="内部类"><a href="#内部类" class="headerlink" title="内部类"></a>内部类</h3><h3 id="集合"><a href="#集合" class="headerlink" title="集合"></a>集合</h3><h3 id="泛型"><a href="#泛型" class="headerlink" title="泛型"></a>泛型</h3><p>泛型其实就是一种参数化的集合，通过设定参数来限制你添加进集合的类型，这样如果你添加进集合的元素类型不符合设定的参数，那么就会报错。多态也可以看作是泛型的机制。一个类继承了父类，那么就能通过它的父类找到对应的子类，但是不能通过其他类来找到这个类。泛型的设计就是希望对象或方法具有广泛的表达能力。</p>
+<h4 id="泛型的使用"><a href="#泛型的使用" class="headerlink" title="泛型的使用"></a>泛型的使用</h4><ul>
+<li>用泛型表示类</li>
+</ul>
+<figure class="highlight angelscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="symbol">A</span>&lt;<span class="symbol">T</span>&gt;&#123;</span><br><span class="line">    <span class="keyword">private</span> T value;</span><br><span class="line">    <span class="keyword">public</span> T getValue()&#123;</span><br><span class="line">        <span class="keyword">return</span> value;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>用泛型表示接口<br>泛型接口与泛型类的定义和使用相似。</li>
+<li>用泛型表示方法</li>
+</ul>
+<h4 id="泛型通配符"><a href="#泛型通配符" class="headerlink" title="泛型通配符"></a>泛型通配符</h4><p>List是泛型类，为了表示各种泛型List的父类，可以使用类型通配符?表示：List&lt;?&gt;，它的元素类型可以匹配任何类型</p>
+<h3 id="反射"><a href="#反射" class="headerlink" title="反射"></a>反射</h3><p><strong>Java反射机制是在程序的运行过程中，对于任何一个类，都能够知道它的所有属性和方法；对于任意一个对象，都能够知道调用它的任何属性和方法，这种动态获取信息以及动态调用对象方法的功能称为Java语言的反射机制。</strong><br>总结Java==反射==机制主要提供以下几个功能：</p>
+<ul>
+<li>在运行时构造任意一个类的对象</li>
+<li>在运行时判断任意一个对象所属的类</li>
+<li>在运行时判断任意一个类所有的成员变量和方法</li>
+<li>在运行时调用任意一个对象的方法</li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>感谢你的支持!</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.jpg" alt=" 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2022/01/19/DJ/" rel="next" title="DJ音标">
+                <i class="fa fa-chevron-left"></i> DJ音标
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/3.jpg"
+                alt="" />
+            
+              <p class="site-author-name" itemprop="name"></p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/%7C%7C%20archive">
+              
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/yourname" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:2285685318@qq.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                Links
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.bilibili.com/" title="哔哩哔哩" target="_blank">哔哩哔哩</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Java%E5%9F%BA%E7%A1%80%E5%A4%8D%E4%B9%A0%E7%AC%94%E8%AE%B0"><span class="nav-text">Java基础复习笔记</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80-%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5"><span class="nav-text">一.基础概念</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-Java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%9A%84%E7%89%B9%E7%82%B9"><span class="nav-text">1.Java面向对象的特点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-Java%E8%AF%AD%E8%A8%80%E8%B7%A8%E5%B9%B3%E5%8F%B0%E5%8E%9F%E7%90%86"><span class="nav-text">2.Java语言跨平台原理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-JRE%E5%92%8CJDK"><span class="nav-text">3.JRE和JDK</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-%E5%B8%B8%E7%94%A8DOS%E5%91%BD%E4%BB%A4"><span class="nav-text">4.常用DOS命令</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C%E3%80%81Java%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95"><span class="nav-text">二、Java基础语法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="nav-text">1.数据类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%91%BD%E5%90%8D"><span class="nav-text">命名</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1"><span class="nav-text">2.面向对象</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%B1%BB%E4%B9%9F%E6%98%AF%E4%B8%80%E7%A7%8D%E5%AF%B9%E8%B1%A1"><span class="nav-text">类也是一种对象</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%88%9B%E5%BB%BA"><span class="nav-text">对象的创建</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%B1%9E%E6%80%A7%E5%92%8C%E6%96%B9%E6%B3%95"><span class="nav-text">属性和方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9E%84%E9%80%A0%E6%96%B9%E6%B3%95"><span class="nav-text">构造方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%96%B9%E6%B3%95%E9%87%8D%E8%BD%BD"><span class="nav-text">方法重载</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%96%B9%E6%B3%95%E7%9A%84%E9%87%8D%E5%86%99"><span class="nav-text">方法的重写</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%88%9D%E5%A7%8B%E5%8C%96"><span class="nav-text">初始化</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%88%9D%E5%A7%8B%E5%8C%96%E9%A1%BA%E5%BA%8F"><span class="nav-text">初始化顺序</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%95%B0%E7%BB%84%E5%88%9D%E5%A7%8B%E5%8C%96"><span class="nav-text">数组初始化</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AF%B9%E8%B1%A1%E7%9A%84%E9%94%80%E6%AF%81"><span class="nav-text">对象的销毁</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#this%E5%92%8Csuper"><span class="nav-text">this和super</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AE%BF%E9%97%AE%E6%8E%A7%E5%88%B6%E6%9D%83%E9%99%90"><span class="nav-text">访问控制权限</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BB%A7%E6%89%BF"><span class="nav-text">继承</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%A4%9A%E6%80%81"><span class="nav-text">多态</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BB%84%E5%90%88"><span class="nav-text">组合</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#static"><span class="nav-text">static</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#final"><span class="nav-text">final</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8E%A5%E5%8F%A3%E5%92%8C%E6%8A%BD%E8%B1%A1%E7%B1%BB"><span class="nav-text">接口和抽象类</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%8E%A5%E5%8F%A3"><span class="nav-text">接口</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%8A%BD%E8%B1%A1%E7%B1%BB"><span class="nav-text">抽象类</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BC%82%E5%B8%B8"><span class="nav-text">异常</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%B8%B8%E8%A7%81%E7%9A%84Exception"><span class="nav-text">常见的Exception</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%8E%E5%BC%82%E5%B8%B8%E6%9C%89%E5%85%B3%E7%9A%84%E5%85%B3%E9%94%AE%E5%AD%97"><span class="nav-text">与异常有关的关键字</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#throws%E5%92%8Cthrow"><span class="nav-text">throws和throw</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#try%E3%80%81finally%E3%80%81catch"><span class="nav-text">try、finally、catch</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Java%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B"><span class="nav-text">Java内存模型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%86%85%E9%83%A8%E7%B1%BB"><span class="nav-text">内部类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%9B%86%E5%90%88"><span class="nav-text">集合</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B3%9B%E5%9E%8B"><span class="nav-text">泛型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%B3%9B%E5%9E%8B%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="nav-text">泛型的使用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%B3%9B%E5%9E%8B%E9%80%9A%E9%85%8D%E7%AC%A6"><span class="nav-text">泛型通配符</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%8D%E5%B0%84"><span class="nav-text">反射</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">菜菜小狗</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">7.6k</span>
+  
+</div>
+
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+  <script type="text/javascript" src="/js/src/js.cookie.js?v=5.1.4"></script>
+  <script type="text/javascript" src="/js/src/scroll-cookie.js?v=5.1.4"></script>
+
+
+  
+
+</body>
+</html>
